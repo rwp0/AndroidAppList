@@ -1,4 +1,6 @@
 use v5.38;
+use experimental qw(for_list);
+
 use Path::Tiny;
 
 use constant URL => 'playstore';
