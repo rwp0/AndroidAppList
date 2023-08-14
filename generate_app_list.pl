@@ -7,7 +7,8 @@ my $file = path( 'out' ) -> openw;
 
 my @apps = (
   { id1 => 'Name' } ,
-  { id2 => 'Name2' }
+  { id2 => 'Name2' } ,
+  { id3 => 'Name3' } ,
 );
 
 for my $app ( @apps ) {
