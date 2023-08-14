@@ -30,6 +30,7 @@ jobs:
         with:
           install: |
             Path::Tiny
+            URI
             System::Command
       
       - name: Single line command

@@ -1,9 +1,12 @@
 use v5.38;
-use experimental qw(for_list);
+use experimental qw( for_list );
 
 use Path::Tiny;
+use URI;
 
-use constant URL => 'playstore';
+use constant {
+  URL => 'https://play.google.com/store/apps/details' , # ?id=+, hl=en_US
+};
 
 my $file = path( 'out' ) -> openw;
 
@@ -16,6 +19,6 @@ my @apps = (
 for my $app ( @apps ) {
   for my ( $id , $name ) ( $app -> %* ) {
     say "$id: $name";
-    $file -> say( "$id: $name" );
+    $file -> say( "$id: $name" ); # (URL + name)
   }
 }
