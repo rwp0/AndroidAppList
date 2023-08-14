@@ -21,10 +21,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 
       - name: Set up Perl environment
-        uses: shogo82148/actions-setup-perl@stable
+        uses: shogo82148/actions-setup-perl@v1.23.1
+        # https://github.com/marketplace/actions/setup-perl-environment
 
       - name: Install Perl libraries
         uses: perl-actions/install-with-cpanm@stable
+        # https://github.com/marketplace/actions/install-with-cpanm
         with:
           install: |
             Path::Tiny
