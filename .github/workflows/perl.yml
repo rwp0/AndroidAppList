@@ -1,0 +1,44 @@
+name: my_perl_workflow
+
+on:
+
+  push:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+  # allow manual run (Actions tab)
+
+jobs:
+
+  job1:
+  
+    runs-on: ubuntu-latest
+    # runner is an OS
+    
+    steps:
+    # steps are tasks sequence in a job
+      - uses: actions/checkout@v3
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+
+      - name: Set up Perl environment
+        uses: shogo82148/actions-setup-perl@stable
+
+      - name: Install Perl libraries
+        uses: perl-actions/install-with-cpanm@stable
+        with:
+          install: |
+            Path::Tiny
+            System::Command
+      
+      - name: Single line command
+        run: echo Hello, world!
+      # command in runner's shell
+
+      - name: Multi line command
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          
+      - name: Try Perl
+        run: perl generate_app_list.pl
+        
