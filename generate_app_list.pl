@@ -8,7 +8,7 @@ use constant URL => 'playstore';
 my $file = path( 'out' ) -> openw;
 
 my @apps = (
-  { id1 => 'Name' } ,
+  { id1 => 'Name1' } ,
   { id2 => 'Name2' } ,
   { id3 => 'Name3' } ,
 );
